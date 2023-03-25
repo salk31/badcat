@@ -3,7 +3,7 @@
 from tflite_runtime.interpreter import Interpreter
 
 TF_MODEL_FILE_PATH = 'model.tflite' # The default path to the saved TensorFlow Lite model
-
+print("starting")
 interpreter = Interpreter(model_path=TF_MODEL_FILE_PATH)
 print("got interpreter")
 
