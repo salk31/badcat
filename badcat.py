@@ -7,6 +7,7 @@ TF_MODEL_FILE_PATH = 'model.tflite' # The default path to the saved TensorFlow L
 interpreter = Interpreter(model_path=TF_MODEL_FILE_PATH)
 
 classify_lite = interpreter.get_signature_runner('serving_default')
+print("got classify")
 
 predictions_lite = classify_lite(sequential_1_input=img_array)['outputs']
 score_lite = tf.nn.softmax(predictions_lite)
