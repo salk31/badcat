@@ -5,6 +5,7 @@ from tflite_runtime.interpreter import Interpreter
 TF_MODEL_FILE_PATH = 'model.tflite' # The default path to the saved TensorFlow Lite model
 
 interpreter = Interpreter(model_path=TF_MODEL_FILE_PATH)
+print("got interpreter")
 
 classify_lite = interpreter.get_signature_runner('serving_default')
 print("got classify")
