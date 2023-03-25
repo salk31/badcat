@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-import tensorflow as tf
+from tflite_runtime.interpreter import Interpreter
 
 TF_MODEL_FILE_PATH = 'model.tflite' # The default path to the saved TensorFlow Lite model
 
-interpreter = tf.lite.Interpreter(model_path=TF_MODEL_FILE_PATH)
+interpreter = Interpreter(model_path=TF_MODEL_FILE_PATH)
 
 classify_lite = interpreter.get_signature_runner('serving_default')
 
