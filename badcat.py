@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import tensorflow as tf
+
 TF_MODEL_FILE_PATH = 'model.tflite' # The default path to the saved TensorFlow Lite model
 
 interpreter = tf.lite.Interpreter(model_path=TF_MODEL_FILE_PATH)
