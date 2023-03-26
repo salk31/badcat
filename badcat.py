@@ -13,7 +13,7 @@ classify_lite = interpreter.get_signature_runner('serving_default')
 print("got classify")
 
 
-sunflower_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/592px-Red_sunflower.jpg"
+image_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/592px-Red_sunflower.jpg"
 img = Image.open( image_url ).convert('RGB').resize((224, 224))
 img_array = np.array ( img, dtype=np.float32 )
 
