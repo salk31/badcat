@@ -13,7 +13,7 @@ classify_lite = interpreter.get_signature_runner('serving_default')
 print("got classify")
 
 
-image_url = "clara/Camera1_06-21-22.jpg"
+image_url = "data/clara/Camera1_06-21-22.jpg"
 img = Image.open( image_url ).convert('RGB').resize((224, 224))
 img_array = np.array ( img, dtype=np.float32 )
 
