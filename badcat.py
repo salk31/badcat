@@ -16,6 +16,7 @@ print("got classify")
 image_url = "data/clara/Camera1_06-21-22.jpg"
 img = Image.open( image_url ).convert('RGB').resize((180, 180))
 img_array = np.array ( img, dtype=np.float32 )
+img_array = np.expand_dims(img_array, axis=0)/255
 
 
 predictions_lite = classify_lite(sequential_1_input=img_array)['outputs']
