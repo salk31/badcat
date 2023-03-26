@@ -14,7 +14,7 @@ print("got classify")
 
 
 image_url = "data/clara/Camera1_06-21-22.jpg"
-img = Image.open( image_url ).convert('RGB').resize((224, 224))
+img = Image.open( image_url ).convert('RGB').resize((180, 180))
 img_array = np.array ( img, dtype=np.float32 )
 
 
