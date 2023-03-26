@@ -23,7 +23,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '-m',
       '--model_file',
-      default='model.tflite.tflite',
+      default='model.tflite',
       help='.tflite model to be executed')
   parser.add_argument(
       '-l',
