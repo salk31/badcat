@@ -18,7 +18,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '-i',
       '--image',
-      default='data/clara/Camera1_06_21-22.jpg',
+      default='data/clara/Camera1_06-21-22.jpg',
       help='image to be classified')
   parser.add_argument(
       '-m',
