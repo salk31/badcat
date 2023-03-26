@@ -104,11 +104,11 @@ if __name__ == '__main__':
   results = np.squeeze(output_data)
 
   top_k = results.argsort()[-5:][::-1]
-  #labels = load_labels(args.label_file)
+  labels = ['badb', 'badbw', 'clara']
   for i in top_k:
     if floating_model:
-      print('{:08.6f}: {}'.format(float(results[i]), 'labels[i]'))
+      print('{:08.6f}: {}'.format(float(results[i]), labels[i]))
     else:
-      print('{:08.6f}: {}'.format(float(results[i] / 255.0), 'labels[i]'))
+      print('{:08.6f}: {}'.format(float(results[i] / 255.0), labels[i]))
 
   print('time: {:.3f}ms'.format((stop_time - start_time) * 1000))
