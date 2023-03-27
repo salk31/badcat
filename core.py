@@ -12,24 +12,6 @@ def init():
   ext_delegate = None
   ext_delegate_options = {}
 
-  # parse extenal delegate options
-  if args.ext_delegate_options is not None:
-    options = args.ext_delegate_options.split(';')
-    for o in options:
-      kv = o.split(':')
-      if (len(kv) == 2):
-        ext_delegate_options[kv[0].strip()] = kv[1].strip()
-      else:
-        raise RuntimeError('Error parsing delegate option: ' + o)
-
-  # load external delegate
-  if args.ext_delegate is not None:
-    print('Loading external delegate from {} with args: {}'.format(
-        args.ext_delegate, ext_delegate_options))
-    ext_delegate = [
-        tflite.load_delegate(args.ext_delegate, ext_delegate_options)
-    ]
-
   interpreter = tflite.Interpreter(
       model_path=args.model_file,
       experimental_delegates=ext_delegate,
