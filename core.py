@@ -9,11 +9,13 @@ print("hello from core")
 
 
 def init():
+  model_file = model.tflite
+
   ext_delegate = None
   ext_delegate_options = {}
 
   interpreter = tflite.Interpreter(
-      model_path=args.model_file,
+      model_path=model_file,
       experimental_delegates=ext_delegate,
       num_threads=args.num_threads)
   interpreter.allocate_tensors()
