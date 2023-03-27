@@ -1,6 +1,8 @@
 #!/usr/local/bin/python3.9
 """label_image for tflite."""
 
+import core
+
 import argparse
 import time
 
