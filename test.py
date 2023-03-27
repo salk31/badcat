@@ -7,5 +7,5 @@ core = core.Core()
 
 data_dir = pathlib.Path("test/data")
 
-for path : data_dir.glob("*/*.jpg"):
+for path in data_dir.glob("*/*.jpg"):
   core.process(path)
