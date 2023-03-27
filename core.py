@@ -10,6 +10,7 @@ print("hello from core")
 
 def init():
   model_file = 'model.tflite'
+  num_threads = 1
 
   ext_delegate = None
   ext_delegate_options = {}
@@ -17,7 +18,7 @@ def init():
   interpreter = tflite.Interpreter(
       model_path=model_file,
       experimental_delegates=ext_delegate,
-      num_threads=args.num_threads)
+      num_threads=num_threads)
   interpreter.allocate_tensors()
 
   input_details = interpreter.get_input_details()
