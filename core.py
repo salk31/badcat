@@ -41,7 +41,7 @@ class Core:
     if self.floating_model:
       input_data = np.float32(input_data)
 
-    self.interpreter.set_tensor(self.input_details[0]['index'], self.input_data)
+    self.interpreter.set_tensor(self.input_details[0]['index'], input_data)
 
     start_time = time.time()
     self.interpreter.invoke()
