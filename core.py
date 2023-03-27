@@ -9,7 +9,7 @@ print("hello from core")
 
 
 def init():
-  model_file = model.tflite
+  model_file = 'model.tflite'
 
   ext_delegate = None
   ext_delegate_options = {}
