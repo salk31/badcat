@@ -32,7 +32,7 @@ class Core:
     self.width = self.input_details[0]['shape'][2]
   
   
-  def process(image):
+  def process(self, image):
     img = Image.open(image).resize((self.width, self.height))
 
     # add N dim
