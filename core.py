@@ -51,7 +51,7 @@ class Core:
     results = np.squeeze(output_data)
 
     top_k = results.argsort()[-5:][::-1]
-    labels = ['badb', 'badbw', 'clara']
+    labels = ['badbw', 'clara']
     for i in top_k:
       if self.floating_model:
         print('{:08.6f}: {}'.format(float(results[i]), labels[i]))
