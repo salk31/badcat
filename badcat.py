@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3.9
 """label_image for tflite."""
 
 import argparse
@@ -32,11 +33,11 @@ if __name__ == '__main__':
       help='name of file containing labels')
   parser.add_argument(
       '--input_mean',
-      default=127.5, type=float,
+      default=0.0, type=float,
       help='input_mean')
   parser.add_argument(
       '--input_std',
-      default=127.5, type=float,
+      default=1.0, type=float,
       help='input standard deviation')
   parser.add_argument(
       '--num_threads', default=None, type=int, help='number of threads')
