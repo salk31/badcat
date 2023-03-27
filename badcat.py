@@ -10,5 +10,5 @@ import core
 
 if __name__ == '__main__':
 
-  core = new core.Core()
+  core = core.Core()
   core.process('data/clara/Camera1_06-21-22.jpg')
