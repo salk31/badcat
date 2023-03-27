@@ -38,7 +38,7 @@ class Core:
     # add N dim
     input_data = np.expand_dims(img, axis=0)
 
-    if floating_model:
+    if self.floating_model:
       input_data = np.float32(input_data)
 
     self.interpreter.set_tensor(input_details[0]['index'], input_data)
@@ -53,7 +53,7 @@ class Core:
     top_k = results.argsort()[-5:][::-1]
     labels = ['badb', 'badbw', 'clara']
     for i in top_k:
-      if floating_model:
+      if self.floating_model:
         print('{:08.6f}: {}'.format(float(results[i]), labels[i]))
       else:
         print('{:08.6f}: {}'.format(float(results[i] / 255.0), labels[i]))
