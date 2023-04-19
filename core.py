@@ -55,12 +55,12 @@ class Core:
     #results = np.squeeze(output_data)
     print(str(predictions_lite))
 
-    top_k = results.argsort()[-5:][::-1]
-    labels = ['badbw', 'clara']
-    for i in top_k:
-      if self.floating_model:
-        print('{:08.6f}: {}'.format(float(results[i]), labels[i]))
-      else:
-        print('{:08.6f}: {}'.format(float(results[i] / 255.0), labels[i]))
+    #top_k = results.argsort()[-5:][::-1]
+    #labels = ['badbw', 'clara']
+    #for i in top_k:
+    #  if self.floating_model:
+    #    print('{:08.6f}: {}'.format(float(results[i]), labels[i]))
+    #  else:
+    #    print('{:08.6f}: {}'.format(float(results[i] / 255.0), labels[i]))
 
-    print('time: {:.3f}ms'.format((stop_time - start_time) * 1000))
+    #print('time: {:.3f}ms'.format((stop_time - start_time) * 1000))
