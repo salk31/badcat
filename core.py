@@ -15,11 +15,8 @@ class Core:
     ext_delegate = None
     ext_delegate_options = {}
 
-    self.interpreter = tflite.Interpreter(
-        model_path=model_file,
-        experimental_delegates=ext_delegate,
-        num_threads=num_threads)
-    self.interpreter.allocate_tensors()
+    self.interpreter = tf.Interpreter(model_path=model_file)
+    #self.interpreter.allocate_tensors()
 
     self.input_details = self.interpreter.get_input_details()
     self.output_details = self.interpreter.get_output_details()
