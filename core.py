@@ -36,10 +36,10 @@ class Core:
     img = Image.open(image).resize((self.width, self.height))
 
     # add N dim
-    input_data = np.expand_dims(img, axis=0)
+    img_array = np.expand_dims(img, axis=0)
 
-    if self.floating_model:
-      input_data = np.float32(input_data)
+    #if self.floating_model:
+    #  input_data = np.float32(input_data)
 
   
 
