@@ -47,6 +47,7 @@ class Core:
 
     start_time = time.time()
     #self.interpreter.invoke()
+    classify_lite = self.interpreter.get_signature_runner('serving_default')
     predictions_lite = classify_lite(sequential_1_input=img_array)['outputs']
     stop_time = time.time()
 
