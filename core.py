@@ -41,17 +41,18 @@ class Core:
     if self.floating_model:
       input_data = np.float32(input_data)
 
-    predictions = model.predict(input_data)
-    print(str(predictions))
+  
 
-    self.interpreter.set_tensor(self.input_details[0]['index'], input_data)
+    #self.interpreter.set_tensor(self.input_details[0]['index'], input_data)
 
     start_time = time.time()
-    self.interpreter.invoke()
+    #self.interpreter.invoke()
+    predictions_lite = classify_lite(sequential_1_input=img_array)['outputs']
     stop_time = time.time()
 
-    output_data = self.interpreter.get_tensor(self.output_details[0]['index'])
-    results = np.squeeze(output_data)
+    #output_data = self.interpreter.get_tensor(self.output_details[0]['index'])
+    #results = np.squeeze(output_data)
+    print(str(predictions_lite))
 
     top_k = results.argsort()[-5:][::-1]
     labels = ['badbw', 'clara']
