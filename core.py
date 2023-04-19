@@ -41,7 +41,8 @@ class Core:
     if self.floating_model:
       input_data = np.float32(input_data)
 
-    print(str(input_data))
+    predictions = model.predict(input_data)
+    print(str(predictions))
 
     self.interpreter.set_tensor(self.input_details[0]['index'], input_data)
 
