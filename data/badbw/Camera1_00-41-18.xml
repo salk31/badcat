@@ -1,0 +1,26 @@
+<annotation>
+	<folder>badbw</folder>
+	<filename>Camera1_00-41-18.jpg</filename>
+	<path>C:\psrc\badcat\data\badbw\Camera1_00-41-18.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>320</width>
+		<height>200</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bad</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5</xmin>
+			<ymin>62</ymin>
+			<xmax>151</xmax>
+			<ymax>190</ymax>
+		</bndbox>
+	</object>
+</annotation>
