@@ -38,7 +38,7 @@ class Core:
     if self.floating_model:
       img_array = np.float32(img_array)
     
-    print(str(img_array))
+    #print(str(img_array))
   
 
     #self.interpreter.set_tensor(self.input_details[0]['index'], input_data)
@@ -61,4 +61,4 @@ class Core:
     #  else:
     #    print('{:08.6f}: {}'.format(float(results[i] / 255.0), labels[i]))
 
-    #print('time: {:.3f}ms'.format((stop_time - start_time) * 1000))
+    print('time: {:.3f}ms'.format((stop_time - start_time) * 1000))
