@@ -38,8 +38,8 @@ class Core:
     # add N dim
     img_array = np.expand_dims(img, axis=0)
 
-    #if self.floating_model:
-    #  input_data = np.float32(input_data)
+    if self.floating_model:
+      img_array = np.float32(img_array)
 
   
 
