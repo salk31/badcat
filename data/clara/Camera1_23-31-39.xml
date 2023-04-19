@@ -1,0 +1,26 @@
+<annotation>
+	<folder>clara</folder>
+	<filename>Camera1_23-31-39.jpg</filename>
+	<path>C:\psrc\badcat\data\clara\Camera1_23-31-39.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>320</width>
+		<height>200</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>clara</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6</xmin>
+			<ymin>67</ymin>
+			<xmax>169</xmax>
+			<ymax>182</ymax>
+		</bndbox>
+	</object>
+</annotation>
