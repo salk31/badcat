@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 import tflite_runtime.interpreter as tflite
-import cv2
+#import cv2
 
 import time
 
@@ -34,6 +34,7 @@ class Core:
   
   def process(self, image):
     # Load image and resize to expected shape [1xHxWx3]
+    # TODO was using opencv ... couldn't install so do simple way, but colour space wrong?
     img = Image.open(image).resize((self.width, self.height))
 
     # add N dim
