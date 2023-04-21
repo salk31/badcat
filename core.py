@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
-#import tflite_runtime.interpreter as tflite
-from tensorflow.lite.python.interpreter import Interpreter
+import tflite_runtime.interpreter as tflite
+
 
 import time
 
@@ -17,7 +17,7 @@ class Core:
       labels = [line.strip() for line in f.readlines()]
 
     # Load the Tensorflow Lite model into memory
-    self.interpreter = Interpreter(model_path=modelpath)
+    self.interpreter = tflite.Interpreter(model_path=modelpath)
     self.interpreter.allocate_tensors()
 
     # Get model details
