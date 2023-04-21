@@ -21,12 +21,12 @@ class Core:
     self.interpreter.allocate_tensors()
 
     # Get model details
-    input_details = self.interpreter.get_input_details()
-    output_details = self.interpreter.get_output_details()
-    self.height = input_details[0]['shape'][1]
-    self.width = input_details[0]['shape'][2]
+    self.input_details = self.interpreter.get_input_details()
+    self.output_details = self.interpreter.get_output_details()
+    self.height = self.input_details[0]['shape'][1]
+    self.width = self.input_details[0]['shape'][2]
 
-    self.float_input = (input_details[0]['dtype'] == np.float32)
+    self.float_input = (self.input_details[0]['dtype'] == np.float32)
 
     self.input_mean = 127.5
     self.input_std = 127.5
@@ -51,9 +51,9 @@ class Core:
     self.interpreter.invoke()
 
     # Retrieve detection results
-    boxes = self.interpreter.get_tensor(output_details[1]['index'])[0] # Bounding box coordinates of detected objects
-    classes = self.interpreter.get_tensor(output_details[3]['index'])[0] # Class index of detected objects
-    scores = self.interpreter.get_tensor(output_details[0]['index'])[0] # Confidence of detected objects
+    boxes = self.interpreter.get_tensor(self.output_details[1]['index'])[0] # Bounding box coordinates of detected objects
+    classes = self.interpreter.get_tensor(self.output_details[3]['index'])[0] # Class index of detected objects
+    scores = self.interpreter.get_tensor(self.output_details[0]['index'])[0] # Confidence of detected objects
     
     print(str(classes))
     print(str(scores))
