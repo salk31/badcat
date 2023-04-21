@@ -10,7 +10,7 @@ print("hello from core")
 
 class Core:
   def __init__(self):
-    model_file = 'custom_model_lite/detect.tflite'
+    model_path = 'custom_model_lite/detect.tflite'
     lblpath = 'custom_model_lite/labelmap.txt'
 
     with open(lblpath, 'r') as f:
