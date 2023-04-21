@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 /motioneye.img
 /.project
+/labelImg.exe
