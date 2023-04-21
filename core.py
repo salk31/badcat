@@ -47,7 +47,7 @@ class Core:
       input_data = (np.float32(input_data) - self.input_mean) / self.input_std
 
     # Perform the actual detection by running the model with the image as input
-    self.interpreter.set_tensor(input_details[0]['index'],input_data)
+    self.interpreter.set_tensor(self.input_details[0]['index'], input_data)
     self.interpreter.invoke()
 
     # Retrieve detection results
