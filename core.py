@@ -1,6 +1,7 @@
 import numpy as np
 from PIL import Image
-import tflite_runtime.interpreter as tflite
+#import tflite_runtime.interpreter as tflite
+from tensorflow.lite.python.interpreter import Interpreter
 
 import time
 
