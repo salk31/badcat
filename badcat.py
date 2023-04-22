@@ -19,4 +19,5 @@ if __name__ == '__main__':
   
   for image in images:
     print(image)
-    core.process(image)
+    res = core.process(image)
+    print(str(res))

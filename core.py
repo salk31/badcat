@@ -6,7 +6,18 @@ import tflite_runtime.interpreter as tflite
 import time
 
 
-print("hello from core")
+class Result:
+  def __init__(self, labels, boxes, classes, scores):
+
+    self.detections = []
+    
+    for i in range(len(scores)):
+      if ((scores[i] > 0.6) and (scores[i] <= 1.0)):
+        object_name = labels[classes[i]]
+        self.detections.append([object_name, scores[i]])
+  
+  def detections(self):
+    return self.detections;
 
 class Core:
   def __init__(self):
@@ -58,4 +69,6 @@ class Core:
     print(str(self.labels))
     print(str(classes))
     print(str(scores))
+    
+    return Result(labels, boxes, classes, scores)
     
