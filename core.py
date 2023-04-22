@@ -70,5 +70,5 @@ class Core:
     print(str(classes))
     print(str(scores))
     
-    return Result(labels, boxes, classes, scores)
+    return Result(self.labels, boxes, classes, scores)
     
