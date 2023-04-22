@@ -11,4 +11,10 @@ import core
 if __name__ == '__main__':
 
   core = core.Core()
-  core.process('data/clara/Camera1_06-21-22.jpg')
+  
+  root = '/var/lib/motioneye/Camera1/2023-04-20/'
+  images = glob.glob(root + '/*.jpg')
+  
+  for image in images:
+    print(image)
+    core.process(image)
