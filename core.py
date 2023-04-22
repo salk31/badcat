@@ -8,14 +8,21 @@ import time
 
 class Result:
   def __init__(self, labels, boxes, classes, scores):
-
-    self.detections = []
+    self.labels = labels
+    self.boxes = boxes
+    self.classes = classes
+    self.scores = scores
     
-    for i in range(len(scores)):
-      if ((scores[i] > 0.6) and (scores[i] <= 1.0)):
-        object_name = labels[int(classes[i])]
-        self.detections.append([object_name, scores[i]])
-
+  def detections(self, thr):
+    detections = []
+    
+    for i in range(len(self.scores)):
+      score = self.scores[i]
+      if ((score > thr) and (score <= 1.0)):
+        object_name = self.labels[int(self.classes[i])]
+        detections.append([object_name, score])
+        
+    return detections
 
 class Core:
   def __init__(self):

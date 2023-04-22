@@ -21,4 +21,4 @@ if __name__ == '__main__':
     #print(image)
     res = core.process(image)
     #print(str(res.detections))
-    print(f'{image} -> {res.detections}')
+    print(f'{image} -> {res.detections(0.8)}')
