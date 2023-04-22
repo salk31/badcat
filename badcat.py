@@ -18,7 +18,7 @@ if __name__ == '__main__':
   images = sorted(glob.glob(root + '/*.jpg'))
   
   for image in images:
-    print(image)
+    #print(image)
     res = core.process(image)
     #print(str(res.detections))
     print(f'{image} -> {res.detections}')
