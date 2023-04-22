@@ -13,7 +13,7 @@ class Result:
     
     for i in range(len(scores)):
       if ((scores[i] > 0.6) and (scores[i] <= 1.0)):
-        object_name = labels[classes[i]]
+        object_name = labels[int(classes[i])]
         self.detections.append([object_name, scores[i]])
   
   def detections(self):
