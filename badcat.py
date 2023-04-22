@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
   core = core.Core()
   
-  root = '/var/lib/motioneye/Camera1/2023-04-21/'
+  root = '/var/lib/motioneye/Camera1/2023-04-20/'
   images = sorted(glob.glob(root + '/*.jpg'))
   
   for image in images:
