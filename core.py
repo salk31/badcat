@@ -64,9 +64,9 @@ class Core:
     classes = self.interpreter.get_tensor(self.output_details[3]['index'])[0] # Class index of detected objects
     scores = self.interpreter.get_tensor(self.output_details[0]['index'])[0] # Confidence of detected objects
     
-    print(str(self.labels))
-    print(str(classes))
-    print(str(scores))
+    #print(str(self.labels))
+    #print(str(classes))
+    #print(str(scores))
     
     return Result(self.labels, boxes, classes, scores)
     
