@@ -8,6 +8,6 @@ core = core.Core()
 data_dir = pathlib.Path("test/data")
 
 for path in data_dir.glob("*/*.jpg"):
-  print(path)
+  #print(path)
   res = core.process(path)
-  print(f'{path} -> {res.detections(0.8)}')
+  print(f'{path} -> {res.detections(0.5)}')
