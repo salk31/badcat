@@ -15,9 +15,7 @@ class Result:
       if ((scores[i] > 0.6) and (scores[i] <= 1.0)):
         object_name = labels[int(classes[i])]
         self.detections.append([object_name, scores[i]])
-  
-  def detections(self):
-    return self.detections;
+
 
 class Core:
   def __init__(self):
