@@ -15,7 +15,7 @@ if __name__ == '__main__':
   core = core.Core()
   snd = snd.Snd()
   
-  root = '/var/lib/motioneye/Camera1/2023-04-07/'
+  root = '/var/lib/motioneye/Camera1/2023-04-20/'
   images = sorted(glob.glob(root + '/*.jpg'))
   
   fire = 0
