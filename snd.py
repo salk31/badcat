@@ -5,7 +5,7 @@ if __name__ == '__main__':
 
   wf = wave.open('snd/mg42a.wav')
   p = pyaudio.PyAudio()
-  chunk = 1024
+  chunk = 40960
   stream = p.open(format =
                 p.get_format_from_width(wf.getsampwidth()),
                 channels = wf.getnchannels(),
@@ -16,3 +16,4 @@ if __name__ == '__main__':
     stream.write(data)
     data = wf.readframes(chunk)
     
+  
