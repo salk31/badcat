@@ -16,6 +16,7 @@ NB buster too old get working tensorflow so:
 * python3.9 -m pip install tflite-runtime
 * python3.9 -m pip install opencv-python-headless==4.5.5.64
 
+* python3.9 -m pip install pygame (after https://www.pygame.org/wiki/CompileUbuntu)
 
 
 
