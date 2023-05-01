@@ -1,10 +1,18 @@
-import pygame
+import wave, sys, pyaudio
 
 
 if __name__ == '__main__':
-  pygame.mixer.init()
-  pygame.mixer.music.load("m34short.wav")
-  pygame.mixer.music.play()
-  while pygame.mixer.music.get_busy() == True:
-    continue
+
+  wf = wave.open('snd/mg42a.wav')
+  p = pyaudio.PyAudio()
+  chunk = 1024
+  stream = p.open(format =
+                p.get_format_from_width(wf.getsampwidth()),
+                channels = wf.getnchannels(),
+                rate = wf.getframerate(),
+                output = True)
+  data = wf.readframes(chunk)
+  while data != '':
+    stream.write(data)
+    data = wf.readframes(chunk)
     
