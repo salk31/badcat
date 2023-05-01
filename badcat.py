@@ -29,7 +29,7 @@ if __name__ == '__main__':
     else:
       got = detections[0]
       if (got[0] == 'bad'):
-        fire++
+        fire += 1
       else:
         fire = 0
         
