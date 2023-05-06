@@ -30,6 +30,7 @@ class MyHandler(FileSystemEventHandler):
     #print(event.src_path.strip())
    
     if (event.src_path == self.last_created):
+      self.last_created = ''
       self.process_image(event.src_path)
   
   def process_image(self, image):
@@ -68,5 +69,4 @@ if __name__ == '__main__':
 
   while True:
     print('sleeping')
-    time.sleep(60)
-    
+    time.sleep(10 * 60)
