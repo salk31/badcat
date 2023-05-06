@@ -21,8 +21,8 @@ class MyHandler(FileSystemEventHandler):
   #  print(event.event_type, event.src_path)
 
   def on_closed(self, event):
-    print("on_created", event.src_path)
-    print(event.src_path.strip())
+    print("on_closed", event.src_path)
+    #print(event.src_path.strip())
     image = event.src_path
     res = self.core.process(image)
     detections = res.detections(0.8)
