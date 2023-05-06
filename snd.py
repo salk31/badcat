@@ -1,7 +1,7 @@
 import subprocess
 
 # for simple commands
-subprocess.run(["ls", "-l"]) 
+#subprocess.run(["ls", "-l"]) 
 
 #import pygame
 
