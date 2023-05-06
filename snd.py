@@ -13,5 +13,3 @@ class Snd:
 if __name__ == '__main__':
   snd = Snd()
   snd.play()
-
-    
