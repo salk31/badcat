@@ -16,14 +16,23 @@ class MyHandler(FileSystemEventHandler):
     self.core = core.Core()
     self.snd = snd.Snd()
     self.fire = 0
+    self.last_created = ''
 
   #def on_any_event(self, event):
   #  print(event.event_type, event.src_path)
 
+  def on_created(self, event):
+    print("on_created", event.src_path)
+    self.last_created = event.src_path
+
   def on_closed(self, event):
     print("on_closed", event.src_path)
     #print(event.src_path.strip())
-    image = event.src_path
+   
+    if (event.src_path == self.last_created):
+      self.process_image(event.src_path)
+  
+  def process_image(self, image):
     res = self.core.process(image)
     detections = res.detections(0.8)
     
