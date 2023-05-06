@@ -22,11 +22,11 @@ class MyHandler(FileSystemEventHandler):
   #  print(event.event_type, event.src_path)
 
   def on_created(self, event):
-    print("on_created", event.src_path)
+    #print("on_created", event.src_path)
     self.last_created = event.src_path
 
   def on_closed(self, event):
-    print("on_closed", event.src_path)
+    #print("on_closed", event.src_path)
     #print(event.src_path.strip())
    
     if (event.src_path == self.last_created):
