@@ -1,0 +1,12 @@
+[Unit]
+Description=Cat
+After=multi-user.target
+[Service]
+Type=simple
+Restart=always
+User=pi
+WorkingDirectory=/home/pi/badcat
+ExecStart=/usr/local/bin/python3.9 -u badcat.py
+[Install]
+WantedBy=multi-user.target
+

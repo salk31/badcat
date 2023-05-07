@@ -30,9 +30,14 @@ class MyHandler(FileSystemEventHandler):
     #print(event.src_path.strip())
    
     if (event.src_path == self.last_created):
+      # still getting UnidentifiedImageError
       self.last_created = ''
-      self.process_image(event.src_path)
-  
+      
+      try:
+        self.process_image(event.src_path)
+      except Exception as err:
+        print(f"Unexpected {err=}, {type(err)=}")
+
   def process_image(self, image):
     res = self.core.process(image)
     detections = res.detections(0.8)
