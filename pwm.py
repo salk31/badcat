@@ -11,6 +11,7 @@ class Pwm:
   
   def set(self, v):
     self.pi.set_servo_pulsewidth(self.pin, v)
+    print(f"{v=}")
       
 if __name__ == '__main__':
   pwm = Pwm(18)
@@ -20,6 +21,6 @@ if __name__ == '__main__':
   time.sleep(10)
   pwm.set(500)
   time.sleep(10)
-  pwm.set(2500)
+  pwm.set(2400)
   
 
