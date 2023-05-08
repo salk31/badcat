@@ -16,7 +16,7 @@ class MyHandler(FileSystemEventHandler):
     self.core = core.Core()
     self.pwm = pwm.Pwm(18)
     self.pwm.set(0)
-    time.sleep(1)
+    time.sleep(3)
     self.pwm.off()
     self.fire = 0
     self.last_created = ''
@@ -58,9 +58,9 @@ class MyHandler(FileSystemEventHandler):
     if (self.fire > 30):
       self.fire = 0
       self.pwm.set(1)
-      time.sleep(1)
+      time.sleep(2)
       self.pwm.set(0)
-      time.sleep(0.1)
+      time.sleep(2)
       self.pwm.off()
       print("tried to scare the bad cat!")
 
