@@ -17,10 +17,10 @@ if __name__ == '__main__':
   pwm = Pwm(18)
   pwm.set(500)
   time.sleep(10)
-  pwm.set(2500)
+  pwm.set(2300)
   time.sleep(10)
   pwm.set(500)
   time.sleep(10)
-  pwm.set(2400)
+  pwm.set(2300)
   
 
