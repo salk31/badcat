@@ -14,7 +14,10 @@ class MyHandler(FileSystemEventHandler):
 
   def __init__(self):
     self.core = core.Core()
-    self.pwm = pwm.Pwm()
+    self.pwm = pwm.Pwm(18)
+    self.pwm.set(0)
+    time.sleep(1)
+    self.pwm.off()
     self.fire = 0
     self.last_created = ''
 
