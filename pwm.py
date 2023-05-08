@@ -14,7 +14,7 @@ class Pwm:
       
 if __name__ == '__main__':
   pwm = Pwm(18)
-  pwm.set(500)
+  pwm.set(10)
   time.sleep(10)
   pwm.set(2500)
   time.sleep(10)
