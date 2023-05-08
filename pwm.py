@@ -1,12 +1,8 @@
 import pigpio
 import time
 
-# for simple commands
-#subprocess.run(["ls", "-l"]) 
 
-#import pygame
-
-class Snd:
+class Pwm:
   def __init__(self, pin):
     self.pin = pin
     self.pi = pigpio.pi() 
