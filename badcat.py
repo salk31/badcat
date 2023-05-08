@@ -2,7 +2,7 @@
 """label_image for tflite."""
 
 import core
-import snd
+import pwm
 import glob
 import time
 
@@ -14,7 +14,7 @@ class MyHandler(FileSystemEventHandler):
 
   def __init__(self):
     self.core = core.Core()
-    self.snd = snd.Snd()
+    self.pwm = pwm.Pwm()
     self.fire = 0
     self.last_created = ''
 
@@ -54,7 +54,12 @@ class MyHandler(FileSystemEventHandler):
     print(f'{image} -> {detections} -> {self.fire}')
     if (self.fire > 30):
       self.fire = 0
-      self.snd.play()
+      self.pwm.set(1)
+      time.sleep(1)
+      self.pwm.set(0)
+      time.sleep(0.1)
+      self.pwm.off()
+      print("tried to scare the bad cat!")
 
 
 if __name__ == '__main__':

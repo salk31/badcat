@@ -13,6 +13,9 @@ class Pwm:
     pwm = 500 + 1800 * v
     self.pi.set_servo_pulsewidth(self.pin, pwm)
     print(f"{v=}, {pwm=}")
+    
+  def off(self):
+    self.pi.set_servo_pulsewidth(self.pin, 0)
       
 if __name__ == '__main__':
   pwm = Pwm(18)
