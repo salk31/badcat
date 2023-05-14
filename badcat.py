@@ -5,6 +5,7 @@ import core
 import pwm
 import glob
 import time
+import random
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -43,7 +44,7 @@ class MyHandler(FileSystemEventHandler):
 
   def process_image(self, image):
     res = self.core.process(image)
-    detections = res.detections(0.8)
+    detections = res.detections(0.9)
     
     if (len(detections) == 0):
       self.fire = 0
@@ -56,7 +57,7 @@ class MyHandler(FileSystemEventHandler):
         
     print(f'{image} -> {detections} -> {self.fire}')
     if (self.fire > 30):
-      self.fire = 0
+      self.fire -= random.randint(0, 5)
       self.pwm.set(1)
       time.sleep(2)
       self.pwm.set(0)
