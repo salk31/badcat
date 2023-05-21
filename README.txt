@@ -17,7 +17,7 @@ NB buster too old get working tensorflow so:
 * python3.9 -m pip install opencv-python-headless==4.5.5.64
 
 * python3.9 -m pip install pygame (after https://www.pygame.org/wiki/CompileUbuntu)
-
+* install pigpiod and enable systemd service
 
 
 // should be object detection? https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi

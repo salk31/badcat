@@ -1,0 +1,38 @@
+False positive
+
+May  7 20:19:32 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-22.jpg -> [['bad', 0.9685068]] -> 1
+May  7 20:19:32 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-23.jpg -> [['bad', 0.8422791]] -> 2
+May  7 20:19:33 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-24.jpg -> [['bad', 0.99274564]] -> 3
+May  7 20:19:33 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-25.jpg -> [['bad', 0.9977924], ['bad', 0.97166157]] -> 4
+May  7 20:19:34 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-26.jpg -> [['bad', 0.9999989]] -> 5
+May  7 20:19:34 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-27.jpg -> [['bad', 0.99870706]] -> 6
+May  7 20:19:34 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-28.jpg -> [['bad', 0.99607944]] -> 7
+May  7 20:19:35 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-29.jpg -> [['bad', 0.9981067]] -> 8
+May  7 20:19:35 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-30.jpg -> [['bad', 0.9979923]] -> 9
+May  7 20:19:36 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-31.jpg -> [['bad', 0.99845755]] -> 10
+May  7 20:19:36 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-32.jpg -> [['bad', 0.99627286]] -> 11
+May  7 20:19:37 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-33.jpg -> [['bad', 0.9828648]] -> 12
+May  7 20:19:37 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-34.jpg -> [['bad', 0.9984801]] -> 13
+May  7 20:19:38 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-35.jpg -> [['bad', 0.9981888]] -> 14
+May  7 20:19:38 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-36.jpg -> [['bad', 0.9982619]] -> 15
+May  7 20:19:39 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-37.jpg -> [['bad', 0.9983468]] -> 16
+May  7 20:19:39 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-38.jpg -> [['bad', 0.9979263]] -> 17
+May  7 20:19:40 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-39.jpg -> [['bad', 0.99817586]] -> 18
+May  7 20:19:41 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-40.jpg -> [['bad', 0.9980635]] -> 19
+May  7 20:19:42 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-41.jpg -> [['bad', 0.99788654]] -> 20
+May  7 20:19:43 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-42.jpg -> [['bad', 0.997668]] -> 21
+May  7 20:19:44 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-43.jpg -> [['bad', 0.9981228]] -> 22
+May  7 20:19:45 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-19-44.jpg -> [['bad', 0.9980203]] -> 23
+May  7 20:22:44 raspberrypi dhcpcd[705]: wlan0: part of Router Advertisement expired
+May  7 20:23:45 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-34.jpg -> [['bad', 0.97085524]] -> 24
+May  7 20:23:45 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-35.jpg -> [['bad', 0.9614366]] -> 25
+May  7 20:23:46 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-36.jpg -> [['bad', 0.98575014]] -> 26
+May  7 20:23:46 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-37.jpg -> [['bad', 0.9998807]] -> 27
+May  7 20:23:47 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-38.jpg -> [['bad', 0.9934671], ['bad', 0.9717921]] -> 28
+May  7 20:23:47 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-39.jpg -> [['bad', 0.8265512]] -> 29
+May  7 20:23:48 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-40.jpg -> [['bad', 0.9946997]] -> 30
+May  7 20:23:48 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-41.jpg -> [['bad', 0.9954825]] -> 31
+May  7 20:23:48 raspberrypi python3.9[29569]: Playing WAVE 'snd/mg42a.wav' : Signed 16 bit Little Endian, Rate 48000 Hz, Mono
+May  7 20:23:50 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-42.jpg -> [['clara', 0.99981356], ['bad', 0.98442143]] -> 0
+May  7 20:23:50 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-43.jpg -> [['bad', 0.99621975]] -> 1
+May  7 20:23:51 raspberrypi python3.9[29569]: /var/lib/motioneye/Camera1/2023-05-07/20-23-44.jpg -> [['bad', 0.99207604]] -> 2
