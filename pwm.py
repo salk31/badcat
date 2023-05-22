@@ -45,7 +45,8 @@ if __name__ == '__main__':
   pwm.set(1)
   time.sleep(1)
   
-  print("off")
+  print("zero then off")
+  pwm.set(0)
   pwm.off()
   
 
