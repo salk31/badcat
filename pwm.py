@@ -16,15 +16,27 @@ class Pwm:
     
   def off(self):
     self.pi.set_servo_pulsewidth(self.pin, 0)
-      
+  
+  def calib(self):
+    self.set(0)
+    time.sleep(0.1)
+    self.set(1)
+    time.sleep(0.1)
+    self.set(0)
+    time.sleep(0.1)
+    self.off()
+  
 if __name__ == '__main__':
   pwm = Pwm(18)
-  pwm.set(0)
-  time.sleep(10)
+  pwm.calib()
   pwm.set(1)
-  time.sleep(10)
+  time.sleep(1)
   pwm.set(0)
-  time.sleep(10)
+  time.sleep(1)
+  pwm.off()
+  time.sleep(1)
   pwm.set(1)
+  time.sleep(1)
+  pwm.off()
   
 

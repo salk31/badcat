@@ -16,9 +16,15 @@ class MyHandler(FileSystemEventHandler):
   def __init__(self):
     self.core = core.Core()
     self.pwm = pwm.Pwm(18)
+    # arm/calibrate pwm
     self.pwm.set(0)
-    time.sleep(3)
+    time.sleep(0.1)
+    self.pwm.set(1)
+    time.sleep(0.1)
+    self.pwm.set(0)
+    time.sleep(0.1)
     self.pwm.off()
+    
     self.fire = 0
     self.last_created = ''
 
@@ -61,8 +67,6 @@ class MyHandler(FileSystemEventHandler):
       self.pwm.set(1)
       time.sleep(2)
       self.pwm.set(0)
-      time.sleep(2)
-      self.pwm.off()
       print("tried to scare the bad cat!")
 
 
