@@ -22,13 +22,18 @@ NB buster too old get working tensorflow so:
 
 # 7.2v battery goes flat...
 A - Switch to 5v pumps
-CON - not got them and are they scary enough?
+CON - not got them and are they scary enough? A: Bought some and quite powerful
+
 B - Use ATX power supply with 12 trickle charge
 PRO - can power lamp
 CON - overkill
+CON - bulky
+
 C - Use ATX power supply with 12 motor (or over drive)
 PRO - can power lamp
 CON - overkill?
+CON - bulky
+
 D - Switch that doesn't drain battery
 CON - still battery will run down (have to recharge water anyway)
 E - Step up converter to trickle charge
