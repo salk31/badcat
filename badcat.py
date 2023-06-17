@@ -2,7 +2,7 @@
 """label_image for tflite."""
 
 import core
-import pwm
+import out
 import glob
 import time
 import random
@@ -15,9 +15,8 @@ class MyHandler(FileSystemEventHandler):
 
   def __init__(self):
     self.core = core.Core()
-    self.pwm = pwm.Pwm(18)
-    # arm/calibrate pwm
-    self.pwm.calib()
+    self.light = out.Out(18)
+    self.light.set(1)
     
     self.fire = 0
     self.last_created = ''
@@ -58,11 +57,11 @@ class MyHandler(FileSystemEventHandler):
     print(f'{image} -> {detections} -> {self.fire}')
     if (self.fire > 30):
       self.fire -= random.randint(0, 5)
-      self.pwm.set(1)
-      time.sleep(2)
-      self.pwm.set(0)
-      time.sleep(0.1)
-      self.pwm.off()
+      #self.pwm.set(1)
+      #time.sleep(2)
+      #self.pwm.set(0)
+      #time.sleep(0.1)
+      #self.pwm.off()
       print("tried to scare the bad cat!")
 
 
