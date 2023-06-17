@@ -14,7 +14,7 @@ class Out:
   
 if __name__ == '__main__':
   pwm = Out(18)
-  pwm.calib()
+  #pwm.calib()
   print("full")
   pwm.set(1)
   time.sleep(1)
