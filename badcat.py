@@ -24,10 +24,8 @@ class MyHandler(FileSystemEventHandler):
     
   def tick(self):
     if 9 < dt.datetime.now().hour < 21:
-      print("light off")
       self.light.set(0)
     else:
-      print("light on")
       self.light.set(1)
 
   #def on_any_event(self, event):
@@ -92,4 +90,4 @@ if __name__ == '__main__':
   while True:
     print('sleeping')
     time.sleep(10 * 60)
-    observer.tick()
+    event_handler.tick()
