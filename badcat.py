@@ -1,15 +1,16 @@
 #!/usr/local/bin/python3.9
 """label_image for tflite."""
 
-import core
-import out
 import glob
 import time
 import random
+import datetime as dt
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
+import core
+import out
 
 class MyHandler(FileSystemEventHandler):
 
@@ -20,6 +21,12 @@ class MyHandler(FileSystemEventHandler):
     
     self.fire = 0
     self.last_created = ''
+    
+  def tick(self):
+    if 9 < dt.datetime.now().hour < 21:
+      self.light.set(0)
+    else:
+      self.light.set(1)
 
   #def on_any_event(self, event):
   #  print(event.event_type, event.src_path)
@@ -83,3 +90,4 @@ if __name__ == '__main__':
   while True:
     print('sleeping')
     time.sleep(10 * 60)
+    observer.tick()
