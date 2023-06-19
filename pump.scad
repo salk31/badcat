@@ -41,8 +41,18 @@ module motor2() {
     translate([0, 0, mot_bump_l + 0.2]) motor();
 }
 
+module blades() {
+    cylinder(h = 1, d = imp_d);
+    t = 0.8;
+    for (a = [0:60:359]) 
+        rotate(a)
+            translate([-t / 2, 0, 0])
+                cube([t, imp_d / 2, imp_l]);
+    
+}
+
 module imp() {
-    translate([0, 0, -imp_shaft_l]) rotate([180, 0, 0]) cylinder(h = imp_l, d = imp_d);
+    translate([0, 0, -imp_shaft_l]) rotate([180, 0, 0]) blades();
     
     rotate([180, 0, 0])
         cylinder(h = imp_shaft_l, d = imp_shaft_d);
@@ -51,7 +61,7 @@ module imp() {
 module imp_r() {
     translate([0, 0, -imp_shaft_l + c])
         rotate([180, 0, 0]) 
-            cylinder(h = imp_l, d = imp_d + c2);
+            cylinder(h = imp_l + 2, d = imp_d + c2);
     
     rotate([180, 0, 0])
         cylinder(h = imp_shaft_l + c2, d = imp_shaft_d + c2);
@@ -59,7 +69,7 @@ module imp_r() {
 
 module body() {
     difference() {
-        translate([0, 0, 1 + mot_l - body_l]) cube_cxy([body_d, body_d, body_l]);
+        translate([0, 0, 0 + mot_l - body_l]) cube_cxy([body_d, body_d, body_l]);
         imp_r(); 
         motor2();
     }
@@ -70,4 +80,6 @@ module foo() {
 }
 
 //intersection() {foo(); body();} // back
-difference() {body(); foo();} // front
+difference() {body(); foo(); translate([4, 0, -22]) rotate([90, 0, 0]) cylinder(h = 20, r = 1.8);} // front
+difference() {imp(); motor2();}
+//blades();
