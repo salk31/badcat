@@ -59,9 +59,15 @@ module imp() {
 }
 
 module imp_r() {
+    // clearance for main rotor
     translate([0, 0, -imp_shaft_l + c])
         rotate([180, 0, 0]) 
-            cylinder(h = imp_l + 2, d = imp_d + c2);
+            cylinder(h = imp_l + c, d = imp_d + c2);
+    
+    // inlet
+    translate([0, 0, -imp_shaft_l + c])
+        rotate([180, 0, 0]) 
+            cylinder(h = 2 * imp_l + c, d = 0.5 * imp_d );
     
     rotate([180, 0, 0])
         cylinder(h = imp_shaft_l + c2, d = imp_shaft_d + c2);
@@ -69,7 +75,7 @@ module imp_r() {
 
 module body() {
     difference() {
-        translate([0, 0, 0 + mot_l - body_l]) cube_cxy([body_d, body_d, body_l]);
+        translate([0, 0, -1 + mot_l - body_l]) cube_cxy([body_d, body_d, body_l]);
         imp_r(); 
         motor2();
     }
@@ -80,6 +86,6 @@ module foo() {
 }
 
 //intersection() {foo(); body();} // back
-difference() {body(); foo(); translate([4, 0, -22]) rotate([90, 0, 0]) cylinder(h = 20, r = 1.8);} // front
+difference() {body(); foo(); translate([4, 0, -23]) rotate([90, 0, 0]) cylinder(h = 20, r = 1.8);} // front
 difference() {imp(); motor2();}
 //blades();
