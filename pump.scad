@@ -1,10 +1,10 @@
 $fn = 180;
 
 mot_l = 20.2;
-mot_d = 8.5;
+mot_d = 8.6;
 
 mot_shaft_l = 5; // measure from face of motor
-mot_shaft_d = 1;
+mot_shaft_d = 1.1;
 
 mot_bump_l = 0.6;
 mot_bump_d = 2.5;
@@ -17,6 +17,8 @@ imp_shaft_d = 3;
 
 c = 0.1;
 c2 = 2 * c;
+cp = 0.2;
+cp2 = 2 * cp;
 
 wall = 2;
 wall2 = 2 * wall;
@@ -52,7 +54,10 @@ module blades() {
 }
 
 module imp() {
-    translate([0, 0, -imp_shaft_l]) rotate([180, 0, 0]) blades();
+    difference() {
+        translate([0, 0, -imp_shaft_l]) rotate([180, 0, 0]) blades();
+        translate([0, 0, -imp_shaft_l - imp_l]) #sphere(r = 2);
+    }
     
     rotate([180, 0, 0])
         cylinder(h = imp_shaft_l, d = imp_shaft_d);
@@ -60,9 +65,9 @@ module imp() {
 
 module imp_r() {
     // clearance for main rotor
-    translate([0, 0, -imp_shaft_l + c])
+    translate([0, 0, -imp_shaft_l + cp])
         rotate([180, 0, 0]) 
-            cylinder(h = imp_l + c, d = imp_d + c2);
+            #cylinder(h = imp_l + cp, d = imp_d + cp2);
     
     // inlet
     translate([0, 0, -imp_shaft_l + c])
@@ -101,3 +106,8 @@ difference() {body(); foo(); translate([4, 0, -23]) rotate([90, 0, 0]) cylinder(
 difference() {imp(); motor2();}
 //blades();
 
+// print 1
+// - motor bit snug
+// - impeller elephants foot means hard to fit and water intake blocked
+// - motor shaft too tight
+// - don't print with supports!

@@ -23,7 +23,7 @@ class MyHandler(FileSystemEventHandler):
     self.last_created = ''
     
   def tick(self):
-    if 9 < dt.datetime.now().hour < 21:
+    if 7 < dt.datetime.now().hour < 21:
       self.light.set(0)
     else:
       self.light.set(1)
