@@ -4,7 +4,7 @@ mot_l = 20.2;
 mot_d = 8.6;
 
 mot_shaft_l = 5; // measure from face of motor
-mot_shaft_d = 1.1;
+mot_shaft_d = 1.2; // actually 1.0 but 1.1 too tight
 
 mot_bump_l = 0.6;
 mot_bump_d = 2.5;
@@ -56,7 +56,7 @@ module blades() {
 module imp() {
     difference() {
         translate([0, 0, -imp_shaft_l]) rotate([180, 0, 0]) blades();
-        translate([0, 0, -imp_shaft_l - imp_l]) #sphere(r = 2);
+        translate([0, 0, -imp_shaft_l - imp_l]) #sphere(r = 2.3);
     }
     
     rotate([180, 0, 0])
@@ -83,6 +83,9 @@ module imp_r() {
     rotate([180, 0, 0])
         translate([0, 0, l / 2])
             cylinder(h = imp_shaft_l + c2 - l, d = imp_shaft_d + 4);
+    
+    // outlet
+    #translate([2, -4, -imp_shaft_l - imp_l / 2]) rotate([0, 90, 0]) cylinder(h = 20, r = 1.8);
 }
 
 module body() {
@@ -93,7 +96,7 @@ module body() {
         for (dx = [-1, 1], dz = [-1, 1])
             translate([dx * 5.5, 20, dz * 8 - 10])
                 rotate([90, 0, 0])
-                    #cylinder(d = 2, h = 40);
+                    cylinder(d = 2, h = 40);
     }
 }
 
@@ -102,9 +105,13 @@ module foo() {
 }
 
 //intersection() {foo(); body();} // back
-difference() {body(); foo(); translate([4, 0, -23]) rotate([90, 0, 0]) cylinder(h = 20, r = 1.8);} // front
-difference() {imp(); motor2();}
+difference() {body(); foo(); } // front
+//difference() {imp(); motor2();}
 //blades();
+
+// print 2
+// - hole for motor shaft still too small
+// - printing imp without adhesion didn't work but annoying to remove with
 
 // print 1
 // - motor bit snug
