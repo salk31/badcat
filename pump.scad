@@ -4,7 +4,7 @@ mot_l = 20.2;
 mot_d = 8.7; // 8.6 too tight for simpler version
 
 mot_shaft_l = 5; // measure from face of motor
-mot_shaft_d = 1.3; // actually 1.0 but 1.1 too tight, 1.2 too tight for bigger imp
+mot_shaft_d = 1.2; // actually 1.0 but 1.1 too tight, 1.3 too loose
 
 mot_bump_l = 0.6;
 mot_bump_d = 2.5;
@@ -12,26 +12,22 @@ mot_bump_d = 2.5;
 imp_l = 5;
 imp_d = 20;
 
-imp_shaft_l = 20;
-imp_shaft_d = 3;
+
 
 c = 0.1;
 c2 = 2 * c;
 cp = 0.5;
 cp2 = 2 * cp;
 
-wall = 2;
-wall2 = 2 * wall;
-body_l = mot_l + imp_shaft_l + imp_l;
-body_d = imp_d + wall2;
+
 
 module cube_cxy(d) {
     translate([-d.x / 2, -d.y / 2, 0]) cube(d);
 }
 
-module motor() {
+module motor(shaft_x = 1) {
     cylinder(h = mot_l, d = mot_d);
-    rotate([180, 0, 0]) cylinder(h = mot_shaft_l, d = mot_shaft_d);
+    rotate([180, 0, 0]) cylinder(h = shaft_x * mot_shaft_l, d = mot_shaft_d);
     rotate([180, 0, 0]) cylinder(h = mot_bump_l, d = mot_bump_d);
     
     // clearance for cables
@@ -60,9 +56,9 @@ module imp_r() {
             cylinder(h = imp_l + cp2, d = imp_d + cp2);
     
     // inlet
-    translate([0, 0, -imp_shaft_l + c])
-        rotate([180, 0, 0]) 
-            #cylinder(h = 2 * imp_l + c, d = 0.5 * imp_d );
+    //translate([0, 0, -imp_shaft_l + c])
+    //    rotate([180, 0, 0]) 
+    //        #cylinder(h = 2 * imp_l + c, d = 0.5 * imp_d );
 
     
     // outlet
@@ -74,17 +70,47 @@ module imp_p() motor_p() translate([0, 0, -1]) rotate([0, 180, 45]) children();
 
 module body() {
     difference() {
-        #motor_p() translate([0, 0, -6]) cylinder(r = 12, h = 20);
+        #motor_p() translate([0, 0, -6 -cp]) cylinder(r = 12, h = 20);
         imp_p() imp_r();
         motor_p() motor();
     }
 }
 
 
-body();
+module pump_p() {
+    translate([0, 0, 14]) rotate([0, -45, 0]) children();
+}
 
-difference() {imp_p() imp(); motor_p() motor();};
-//imp_p() imp_r();
+module base() {
+    or = 40;
+    h = 10;
+    w = 1;
+    difference() {
+        union() {
+            difference() {
+                cylinder(r = or, h = h);
+                translate([0, 0, w]) cylinder(r = or - w, h = h - w);
+            }
+            translate([0, 0, 0]) cube_cxy([20, 20, 10]);
+        }
+        // TODO remove pump
+        pump_p() hull() body();
+        #pump_p() imp_p() imp_r();
+    }
+}
+
+
+//body();
+
+//difference() {imp_p() imp(); motor_p() motor(2);};
+//motor_p() motor();
+base();
+//pump_p() body();
+
+// print 5
+// - motor shaft too loose, must have been elephants foot last time
+// - motor fits very nicely
+// - maybe not enough clearance for "face" of impeller?
 
 // print 4 - simpler design
 // - motor doesn't fit, just slightly too tight
