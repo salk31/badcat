@@ -1,10 +1,10 @@
 $fn = 180;
 
 mot_l = 20.2;
-mot_d = 8.6;
+mot_d = 8.7; // 8.6 too tight for simpler version
 
 mot_shaft_l = 5; // measure from face of motor
-mot_shaft_d = 1.2; // actually 1.0 but 1.1 too tight
+mot_shaft_d = 1.3; // actually 1.0 but 1.1 too tight, 1.2 too tight for bigger imp
 
 mot_bump_l = 0.6;
 mot_bump_d = 2.5;
@@ -85,3 +85,24 @@ body();
 
 difference() {imp_p() imp(); motor_p() motor();};
 //imp_p() imp_r();
+
+// print 4 - simpler design
+// - motor doesn't fit, just slightly too tight
+// - shaft doesn't fit
+// - imp spins nicely straight from printer (first time)
+// - printing body (imp up) is crap without support
+
+// print 3
+// - printing on raft much better but lost bit of one blade
+// - trying running it but imp got stuck and shaft melted and then too big too fit
+// - basically, shaft a pain, printing in two halves causes alignment problems
+
+// print 2
+// - hole for motor shaft still too small
+// - printing imp without adhesion didn't work but annoying to remove with
+
+// print 1
+// - motor bit snug
+// - impeller elephants foot means hard to fit and water intake blocked
+// - motor shaft too tight
+// - don't print with supports!
